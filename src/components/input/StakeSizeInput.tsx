@@ -11,9 +11,9 @@ const StakeSizeInput = (props: { neuronId: string; stakeSize: number }) => {
   let helperText = ""
   if (!isValid) {
     if (isNaN(parsedStakeSize)) {
-      helperText = "invalid input"
+      helperText = "输入有问题"
     } else {
-      helperText = "minimum of 1 ICP"
+      helperText = "最小质押为1个ICP"
     }
   }
 
@@ -34,11 +34,11 @@ const StakeSizeInput = (props: { neuronId: string; stakeSize: number }) => {
   return (
     <FormattedTextInput
       id="ICP_Amount"
-      label="stake size"
+      label="质押数量"
       variant="outlined"
       value={value}
       type="number"
-      placeholder="The number of ICP in the neuron"
+      placeholder="请输入要质押的ICP数量"
       onChange={e => setValue(e.target.value)}
       isValid={!isValid}
       endAdornment={"ICP"}

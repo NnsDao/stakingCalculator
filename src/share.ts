@@ -6,7 +6,7 @@ const getShareMessage = (neurons: Array<NeuronType>): string => {
     return neuron.checked ? acc + 1 : acc
   }, 0)
   if (checkedNeuronSize === 0) {
-    return "Check out this the site to calculate your potential ICP return!"
+    return "查看此站点以计算您的潜在 ICP 回报！"
   } else {
     return `My neuron${checkedNeuronSize > 1 ? "s" : ""} will earn me ${getTotalCheckedReturn(neurons).toFixed(
       2
@@ -16,9 +16,9 @@ const getShareMessage = (neurons: Array<NeuronType>): string => {
 
 export const shareSite = (neurons: Array<NeuronType>) => {
   const shareData = {
-    title: "Neuron Calculator",
+    title: "Network nervous system  Calculator",
     text: getShareMessage(neurons),
-    url: "https://networknervoussystem.com/",
+    url: "https://nns.icpscan.co",
   }
   if (typeof window !== "undefined" && window.navigator.share !== undefined) {
     try {
@@ -29,14 +29,12 @@ export const shareSite = (neurons: Array<NeuronType>) => {
 
 export const shareTwitter = (neurons: Array<NeuronType>) => {
   if (typeof window !== "undefined") {
-    window.open(
-      `https://twitter.com/intent/tweet?text=${getShareMessage(neurons)}&url=https://networknervoussystem.com/`
-    )
+    window.open(`https://twitter.com/intent/tweet?text=${getShareMessage(neurons)}&url=https://nns.icpscan.co`)
   }
 }
 
 export const shareTelegram = (neurons: Array<NeuronType>) => {
   if (typeof window !== "undefined") {
-    window.open(`https://t.me/share/url?text=${getShareMessage(neurons)}&url=https://networknervoussystem.com/`)
+    window.open(`https://t.me/share/url?text=${getShareMessage(neurons)}&url=https://nns.icpscan.co`)
   }
 }

@@ -34,7 +34,7 @@ const DissolveDelayInput = (props: { neuronId: string; dissolveDelay: number; lo
 
   return (
     <PercentageSlider
-      title={"Dissolve delay:"}
+      title={"溶解延迟时间:"}
       percentage={props.dissolveDelay}
       setPerc={setDissolveDelay}
       valueDisplayTransformer={postFix}

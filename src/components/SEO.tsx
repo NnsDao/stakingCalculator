@@ -5,7 +5,7 @@ import ogImage from "../../static/preview.png"
 const SEO = () => {
   return (
     <Helmet
-      title="ICP Neuron Calculator"
+      title="ICP神经元质押计算器"
       meta={[
         {
           name: `twitter:card`,
@@ -13,7 +13,7 @@ const SEO = () => {
         },
         {
           name: `twitter:title`,
-          content: `ICP Neuron Calculator`,
+          content: `ICP神经元质押计算器`,
         },
         {
           name: `twitter:description`,
@@ -33,7 +33,7 @@ const SEO = () => {
         },
         {
           property: `og:title`,
-          content: "ICP Neuron Calculator",
+          content: "ICP神经元质押计算器",
         },
         {
           property: `og:type`,

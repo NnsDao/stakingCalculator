@@ -35,7 +35,7 @@ const stakePeriodInput = (props: { neuronId: string; lockupPeriod: number; disso
 
   return (
     <PercentageSlider
-      title={"Staking period:"}
+      title={"质押时长:"}
       percentage={props.lockupPeriod}
       setPerc={setLockupPeriod}
       valueDisplayTransformer={postFix}

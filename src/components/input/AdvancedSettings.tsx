@@ -24,7 +24,7 @@ const AdvancedSettings = () => {
             <div className="modal-content py-4 text-left px-6">
               {/* <!--Title--> */}
               <div className="flex justify-between items-center">
-                <p className="text-2xl font-medium">Advanced settings</p>
+                <p className="text-2xl font-medium">高级设置</p>
                 <div
                   className="modal-close cursor-pointer z-50"
                   onClick={() => {
@@ -49,7 +49,7 @@ const AdvancedSettings = () => {
                 <div className="flex flex-col w-full space-y-4 pb-4">
                   {/* <ExchangeRateInput exchangeRate={exchangeRate}></ExchangeRateInput> */}
                   <StateLessPercentageSlider
-                    title="% locked inside voting neurons"
+                    title="您锁定在投票神经元内的百分比"
                     value={newGlobalParameters.stakedPerc}
                     onChange={(x: number) => setNewGlobalParameters({ ...newGlobalParameters, stakedPerc: x })}
                     postfix="%"
@@ -59,7 +59,7 @@ const AdvancedSettings = () => {
                     step={1}
                   />
                   <StateLessPercentageSlider
-                    title={"% of proposals you vote on:"}
+                    title={"您投票的提案比例:"}
                     value={newGlobalParameters.votingPerc}
                     onChange={(x: number) => setNewGlobalParameters({ ...newGlobalParameters, votingPerc: x })}
                     postfix={"%"}
@@ -69,22 +69,22 @@ const AdvancedSettings = () => {
                     defaultValue={100}
                   />
                   <StateLessPercentageSlider
-                    title={"Avg. neuron age"}
+                    title={"平均. 神经元年龄"}
                     value={newGlobalParameters.averageAge}
                     onChange={(x: number) => setNewGlobalParameters({ ...newGlobalParameters, averageAge: x })}
-                    postfix={newGlobalParameters.averageAge > 1 ? " years" : " year"}
+                    postfix={newGlobalParameters.averageAge > 1 ? " 年" : " year"}
                     min={0}
                     max={4}
                     step={0.1}
                     defaultValue={5}
                   />
                   <StateLessPercentageSlider
-                    title={"Avg. dissolve delay"}
+                    title={"平均. 溶解延迟周期"}
                     value={newGlobalParameters.averageDissolveDelay}
                     onChange={(x: number) =>
                       setNewGlobalParameters({ ...newGlobalParameters, averageDissolveDelay: x })
                     }
-                    postfix={newGlobalParameters.averageDissolveDelay > 1 ? " years" : " year"}
+                    postfix={newGlobalParameters.averageDissolveDelay > 1 ? " 年" : " year"}
                     min={0.5}
                     max={8}
                     step={0.1}
@@ -99,7 +99,7 @@ const AdvancedSettings = () => {
                   onClick={() => setNewGlobalParameters(standardGlobalParameters)}
                   className="px-4 bg-transparent p-3 rounded-lg text-delete hover:bg-gray-100 mr-2 cursor-pointer"
                 >
-                  RESET TO DEFAULTS
+                  重置为默认值
                 </div>
                 <div
                   onClick={() => {
@@ -108,7 +108,7 @@ const AdvancedSettings = () => {
                   }}
                   className="modal-close px-4 bg-transparent p-3 rounded-lg text-blue hover:bg-gray-100 cursor-pointer"
                 >
-                  APPLY
+                  应用设置
                 </div>
               </div>
             </div>

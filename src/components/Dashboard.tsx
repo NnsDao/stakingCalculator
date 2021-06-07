@@ -40,7 +40,7 @@ const NeuronCheckbox = (props: { checked: boolean; index: number; neuronId: stri
   return (
     <div className="flex flex-row items-center w-32 ml-2">
       <Checkbox checked={props.checked} color="primary" onChange={() => dispatch(toggleChecked(props.neuronId))} />
-      <div>Neuron {props.index}</div>
+      <div>NNS方案 {props.index}</div>
     </div>
   )
 }
@@ -79,28 +79,29 @@ const ReturnStatistics = () => {
   const nrOfYears = getNrYearsFromNeurons(neurons)
   const roi = (totalReturn / totalStake) * 100
   const roiString: string = isNaN(roi) ? "0%" : roi.toFixed(2) + "%"
-  const roiBottomString: string = isNaN(roi) ? "or 0% annualized" : `or ${(roi / nrOfYears).toFixed(2)}% annualized`
+  const roiBottomString: string = isNaN(roi) ? "or 0% 年化" : `or ${(roi / nrOfYears).toFixed(2)}% 年化`
   return (
     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-14 w-max my-4">
       <ReturnStatistic
-        title="Assets locked"
+        title="总锁定资产"
         main={totalStake + " ICP"}
         bottom="" //{"$" + (totalStake * exchangeRate).toFixed(2)}
       />
       <ReturnStatistic
-        title="Total Period"
+        title="总定投时间"
         main={(isFinite(nrOfYears) ? nrOfYears : "0") + " yr."}
         bottom={
-          "ending: " + (isFinite(nrOfYears) ? new Date(getHighestCheckedEndDate(neurons)).toLocaleDateString() : "N/A")
+          "结束时间: " +
+          (isFinite(nrOfYears) ? new Date(getHighestCheckedEndDate(neurons)).toLocaleDateString() : "N/A")
         }
         className="lg:hidden"
       />
       <ReturnStatistic
-        title="Total Return"
+        title="总回报"
         main={totalReturn.toFixed(2) + " ICP"}
         bottom="" //{"$" + (totalReturn * exchangeRate).toFixed(2)}
       />
-      <ReturnStatistic title="ROI" main={roiString} bottom={roiBottomString} />
+      <ReturnStatistic title="投资回报率" main={roiString} bottom={roiBottomString} />
     </div>
   )
 }
@@ -113,9 +114,9 @@ const ReturnTable = (props: { stakeSize: number; startDate: Date; data: any }) =
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Date</TableCell>
-                <TableCell align="center">Total ICP reward</TableCell>
-                <TableCell align="right">ROI%</TableCell>
+                <TableCell>日期</TableCell>
+                <TableCell align="center">总ICP回报</TableCell>
+                <TableCell align="right">投资回报率%</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -142,28 +143,38 @@ const DashBoard = () => {
   return (
     <div className="lg:max-w-dashboard flex-1 mb-5">
       <div className="bg-white mt-5 mx-auto p-5 w-neuron lg:w-auto lg:ml-0 lg:mr-5 lg:max-w-dashboard shadow-lg rounded-lg lg:block">
-        <div className="font-medium text-lg mb-4"> Your stake over time</div>
+        <div className="font-medium text-lg mb-4"> 随着质押时间的推移,您的奖励曲线</div>
         <NeuronSelector></NeuronSelector>
         <Chart />
         <ReturnStatistics />
         <Alert variant="outlined" severity="error">
-          Actual returns may differ from these projections based on several unknown parameters, to learn more check out
-          the FAQ.
+          基于几个未知参数的实际回报可能与这些预测不同，要了解更多信息，请查看常见问题解答。
+          <br />
+          <br />
+          <p> 提示: yrs和(year)=》年; Stake=》质押 ; Add neuron=》增加新的神经元方案; </p>
         </Alert>
-        <div className="mt-4 font-medium ">
-          To learn more about staking and the Internet Computer{" "}
-          <a className="text-blue" href="https://allthingsinternetcomputer.substack.com/">
-            follow me on substack!
+        <div className="mt-4 font-medium mx-5">
+          学习更多质押技巧和ICP知识{" "}
+          <a className="text-blue" href="https://twitter.com/NnsDaos">
+            请关注微信公众号:NnsDao!
           </a>{" "}
         </div>
-        {/* <a
-          className="twitter-share-button"
-          href="https://twitter.com/intent/tweet?text=Hello%20world"
-          data-size="large"
-        >
-          Tweet
+        <a className="text-blue mx-5" href="https://twitter.com/NnsDaos" data-size="large">
+          Twitter{" "}
         </a>
-        <a href="https://t.me/share/url?url={url}&text={text}">telegram</a> */}
+        |
+        <a className="text-blue mx-5" href="https://t.me/nnsdaos">
+          加入Telegram{" "}
+        </a>
+        |
+        <a className="text-blue mx-5" href="https://www.youtube.com/channel/UCPcJwyUsglXbZggwdxLk4Qw">
+          {" "}
+          关注 Youtube频道{" "}
+        </a>
+        |
+        <a className="text-blue mx-5" href="https://space.bilibili.com/2766821">
+          Bilibili频道
+        </a>
       </div>
     </div>
   )

@@ -38,9 +38,7 @@ const PercentageSlider = (props: {
         onChange={(e, value) => setValue(value)}
         aria-labelledby="percentage slider"
       />
-      {value > props.optionalMax ? (
-        <div className="text-delete text-xs"> Dissolve delay can't be higher than staking period</div>
-      ) : null}
+      {value > props.optionalMax ? <div className="text-delete text-xs"> 溶解延迟时间不能高于质押时间</div> : null}
     </div>
   )
 }

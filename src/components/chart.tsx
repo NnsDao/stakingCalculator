@@ -68,12 +68,10 @@ const Chart = () => {
             useMesh={true}
           />
         ) : (
-          <div className="text-delete text-2xl mx-auto">Invalid Neuron Configuration</div>
+          <div className="text-delete text-2xl mx-auto">无效的神经元配置</div>
         )}
       </div>
-      {allNeuronsValid(neurons) ? null : (
-        <div className="text-delete text-xl my-2 lg:hidden">Invalid Neuron Configuration</div>
-      )}
+      {allNeuronsValid(neurons) ? null : <div className="text-delete text-xl my-2 lg:hidden">无效的神经元配置</div>}
     </>
   )
 }

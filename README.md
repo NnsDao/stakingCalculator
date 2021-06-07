@@ -1,3 +1,3 @@
-## Staking calculator
+## NNS计算质押ICP收益
 
-A static site to calculate neuron returns on the internet computer
+一个计算ICP收益的小型计算器,会持续更新新的算法和一些影响因素,推上看到的一个大佬写的,溶解和收益可以作为参考.

@@ -29,7 +29,7 @@ const StartDateInput = (props: { neuronId: string; startDate: number }) => {
         format="MM/dd/yyyy"
         margin="normal"
         id="date-picker-inline"
-        label="Starting date"
+        label="开始日期"
         value={startDate}
         onChange={(date, value) => handleDateChange(date)}
         KeyboardButtonProps={{

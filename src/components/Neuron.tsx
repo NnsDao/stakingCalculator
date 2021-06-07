@@ -52,8 +52,10 @@ const Neuron = (props: { neuron: NeuronType; globalParameters: GlobalParameters;
           </div>
         </div>
         <div className="text-darkGrey">
-          Given an initial ICP stake of {props.initialStake} your total ICP would be {finalICP.toFixed(2)} after{" "}
-          {postFix(props.stakePeriod, true)}.
+          假设初始 ICP 数量为 {props.initialStake} , {postFix(props.stakePeriod, true)}之后,你获得的总 ICP 将是{" "}
+          {finalICP.toFixed(2)} .
+          {/* Given an initial ICP stake of {props.initialStake} your total ICP would be {finalICP.toFixed(2)} after{" "}
+          {postFix(props.stakePeriod, true)}. */}
           {/* Given an ICP price of ${props.exchangeRate.toFixed(2)} USD, the value of your original stake would be worth $
           {(finalICP * props.exchangeRate).toFixed(2)} after {props.stakePeriod} years. */}
         </div>
@@ -93,7 +95,7 @@ const Neuron = (props: { neuron: NeuronType; globalParameters: GlobalParameters;
         className="flex flex-row items-baseline p-4 cursor-pointer"
         onClick={() => dispatch(changeExpanded({ id: props.neuron.id }))}
       >
-        <div className="font-medium text-lg ">Neuron {props.index + 1}</div>
+        <div className="font-medium text-lg ">NNS神经元方案 {props.index + 1}</div>
         <div className="flex-1 text-left ml-5 text-mediumGrey">
           {props.neuron.stakeSize + " ICP / " + postFix(props.neuron.lockupPeriod, false)}
         </div>
@@ -123,7 +125,7 @@ const Neuron = (props: { neuron: NeuronType; globalParameters: GlobalParameters;
             className="font-medium text-delete ml-auto pt-2 cursor-pointer"
             onClick={() => dispatch(deleteNeuron({ id: props.neuron.id }))}
           >
-            DELETE NEURON
+            删除神经元
           </div>
         </div>
       </Collapse>

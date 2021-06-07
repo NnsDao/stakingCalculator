@@ -43,8 +43,8 @@ const Banner = () => {
     <div className="bg-white p-4 flex flex-row justify-center lg:justify-start shadow-md">
       <img src={logo} className="max-w-logo max-h-logo" />
       <div className="ml-4 w-max">
-        <h1 className="font-bold text-2xl top-0 "> ICP Neuron Calculator</h1>
-        <h2 className="text-base bottom-0">Maximize your Vote, Maximize your ICP</h2>
+        <h1 className="font-bold text-2xl top-0 "> ICP神经元质押计算器</h1>
+        <h2 className="text-base bottom-0">最大化投票, 最大化收益ICP</h2>
       </div>
       <div className="hidden lg:flex lg:flex-row ml-auto space-x-4 ">
         {typeof window !== "undefined" && window.navigator.share !== undefined ? (
