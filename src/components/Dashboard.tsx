@@ -18,7 +18,7 @@ import {
 } from "../calcdatapoints"
 import { useAppSelector } from "../redux/hooks"
 import { toggleChecked, toggleGlobalChecked } from "../redux/store"
-import Chart from "./Chart"
+import Chart from "./XChart"
 
 const GlobalCheckBox = (props: { allChecked: boolean; allUnchecked: boolean }) => {
   const dispatch = useDispatch()
